@@ -27,7 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # pip install apps
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
     # local apps
     'employee.apps.EmployeeConfig',
 ]
